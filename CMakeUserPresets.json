@@ -1,0 +1,29 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22
+    },
+    "configurePresets": [
+        {
+            "name": "custom-Debug",
+            "inherits": "mine-Debug"
+        },
+        {
+            "name": "custom-Release",
+            "inherits": "mine-Debug"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "custom-Debug",
+            "configurePreset": "mine-Debug",
+            "inheritConfigureEnvironment": true
+        },
+        {
+            "name": "custom-Release",
+            "configurePreset": "mine-Release",
+            "inheritConfigureEnvironment": true
+        }
+    ]
+}

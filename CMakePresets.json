@@ -1,0 +1,43 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22
+    },
+    "configurePresets": [
+        {
+            "name": "mine",
+            "generator": "Ninja",
+            "binaryDir": "build/${presetName}",
+            "cacheVariables": {
+                "OSSE_VERSION": "3.28"
+            }
+        },
+        {
+            "name": "mine-Debug",
+            "inherits": "mine",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "mine-Release",
+            "inherits": "mine",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "mine-Debug",
+            "configurePreset": "mine-Debug",
+            "inheritConfigureEnvironment": true
+        },
+        {
+            "name": "mine-Release",
+            "configurePreset": "mine-Release",
+            "inheritConfigureEnvironment": true
+        }
+    ]
+}
